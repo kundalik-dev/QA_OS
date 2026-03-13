@@ -181,6 +181,12 @@
   },
   "active": "82d08e3b3a729667",
   "lastOpenFiles": [
+    "skill-generator.html.tmp.22828.1773423446208",
+    "claude/skills/skills-config.js",
+    "claude/skills/skills-config.js.tmp.22828.1773423421347",
+    "skill-generator.html.tmp.22828.1773423097682",
+    "skill-generator.html",
+    "skill-generator.html.tmp.22828.1773422811826",
     "BUGS/2026-BUGS/BUG-001-add-to-cart-button-not-clickable.md",
     "BUGS/2026-BUGS/BUG-002-missing-ni-number-global-search-page.md",
     "claude/skills/bug-creator/SKILL.md",
@@ -195,11 +201,6 @@
     "claude/skills/task-creator",
     "claude/skills/skills-list.md",
     "claude/skills/skills-list-updater",
-    "claude/skills/skill-creator",
-    "claude/skills/explain-code",
-    "claude/skills/bugs-list-updater",
-    "claude/skills/bug-creator",
-    "claude/skills",
     "CLAUDE.md",
     "DAILY/FOLLOW-UPS/RULES/design-structure.md",
     "DAILY/TODOS/TD001-task-setup-life-os-20260312-0000.md",
@@ -215,7 +216,6 @@
     "DAILY/SCRUM/2026/MAR-2026/12-02-2026.md",
     "TEST-CASES/TEMPLATES/test-case-template.md",
     "TEST-CASES/TEMPLATES/test-suite-index.md",
-    "TEMPLATES/test-report-template.md",
-    "TEMPLATES/standup-template.md"
+    "TEMPLATES/test-report-template.md"
   ]
 }
