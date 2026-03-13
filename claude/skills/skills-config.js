@@ -67,11 +67,11 @@ const SKILLS_CONFIG = [
     generate(vals) {
       if (!vals.title) return "";
       let cmd = `/bug.create "${vals.title}"`;
-      if (vals.project)  cmd += ` project=${vals.project}`;
+      if (vals.project) cmd += ` project=${vals.project}`;
       if (vals.severity) cmd += ` severity=${vals.severity}`;
       if (vals.priority) cmd += ` priority=${vals.priority}`;
-      if (vals.build)    cmd += ` build=${vals.build}`;
-      if (vals.tags)     cmd += ` tags=${vals.tags.replace(/\s*,\s*/g, ",")}`;
+      if (vals.build) cmd += ` build=${vals.build}`;
+      if (vals.tags) cmd += ` tags=${vals.tags.replace(/\s*,\s*/g, ",")}`;
       return cmd;
     },
   },
@@ -119,8 +119,8 @@ const SKILLS_CONFIG = [
       if (!vals.title) return "";
       let cmd = `/task.create "${vals.title}"`;
       if (vals.priority) cmd += ` priority=${vals.priority}`;
-      if (vals.due)      cmd += ` due=${vals.due.replace(/\s/g, "")}`;
-      if (vals.tags)     cmd += ` tags=${vals.tags.replace(/\s*,\s*/g, ",")}`;
+      if (vals.due) cmd += ` due=${vals.due.replace(/\s/g, "")}`;
+      if (vals.tags) cmd += ` tags=${vals.tags.replace(/\s*,\s*/g, ",")}`;
       return cmd;
     },
   },
@@ -167,7 +167,8 @@ const SKILLS_CONFIG = [
     name: "SQL Creator",
     icon: "🗄️",
     color: "#8b5cf6",
-    description: "Generate a SQL script .md file from a natural language description",
+    description:
+      "Generate a SQL script .md file from a natural language description",
     command: "/sql.create",
     fields: [
       {
@@ -175,7 +176,8 @@ const SKILLS_CONFIG = [
         label: "What should the SQL do?",
         type: "text",
         required: true,
-        placeholder: "e.g. find members with schemeid=6 and userstatus=active with funds having units>20",
+        placeholder:
+          "e.g. find members with schemeid=6 and userstatus=active with funds having units>20",
         span: "full",
       },
       {
@@ -195,17 +197,17 @@ const SKILLS_CONFIG = [
       {
         id: "dbname",
         label: "Database Name",
-        type: "text",
-        placeholder: "e.g. XPS_API_DEV",
-        hint: "Optional — written into script header",
+        type: "select",
+        options: ["XPS_API_DEV", "ABF_API_DEV"],
+        default: "XPS_API_DEV",
       },
     ],
     generate(vals) {
       if (!vals.description) return "";
       let cmd = `/sql.create "${vals.description}"`;
       if (vals.projectname) cmd += ` projectname=${vals.projectname}`;
-      if (vals.type)        cmd += ` type=${vals.type}`;
-      if (vals.dbname)      cmd += ` dbname=${vals.dbname}`;
+      if (vals.type) cmd += ` type=${vals.type}`;
+      if (vals.dbname) cmd += ` dbname=${vals.dbname}`;
       return cmd;
     },
   },

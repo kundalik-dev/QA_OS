@@ -218,47 +218,7 @@
         display: block;
       }
 
-      .tab[data-skill="bug-creator"].active {
-        background: rgba(248, 113, 113, 0.13);
-        color: #e05252;
-      }
-      .tab[data-skill="bug-creator"] .tab-dot {
-        background: #e05252;
-      }
-      .tab[data-skill="task-creator"].active {
-        background: rgba(96, 165, 250, 0.13);
-        color: #3b82f6;
-      }
-      .tab[data-skill="task-creator"] .tab-dot {
-        background: #3b82f6;
-      }
-      .tab[data-skill="bugs-list-updater"].active {
-        background: rgba(251, 191, 36, 0.13);
-        color: #d97706;
-      }
-      .tab[data-skill="bugs-list-updater"] .tab-dot {
-        background: #d97706;
-      }
-      .tab[data-skill="skills-list-updater"].active {
-        background: rgba(52, 211, 153, 0.13);
-        color: #059669;
-      }
-      .tab[data-skill="skills-list-updater"] .tab-dot {
-        background: #059669;
-      }
-
-      [data-theme="light"] .tab[data-skill="bug-creator"].active {
-        color: #dc2626;
-      }
-      [data-theme="light"] .tab[data-skill="task-creator"].active {
-        color: #2563eb;
-      }
-      [data-theme="light"] .tab[data-skill="bugs-list-updater"].active {
-        color: #b45309;
-      }
-      [data-theme="light"] .tab[data-skill="skills-list-updater"].active {
-        color: #047857;
-      }
+      /* Tab active colors are applied dynamically via JS from SKILLS_CONFIG color field */
 
       /* ── Card ── */
       .skill-card {
@@ -821,16 +781,23 @@
       }
 
       function renderTabs() {
-        document.getElementById("tabs").innerHTML = SKILLS_CONFIG.map(
-          (s) => `
-        <button class="tab ${s.id === activeSkillId ? "active" : ""}"
-                data-skill="${s.id}" onclick="selectSkill('${s.id}')">
+        document.getElementById("tabs").innerHTML = SKILLS_CONFIG.map((s) => {
+          const isActive = s.id === activeSkillId;
+          // Derive active styles directly from the skill's color — works for any skill
+          const activeStyle = isActive
+            ? `background:${s.color}20; color:${s.color};`
+            : "";
+          const dotStyle = `background:${s.color};`;
+          return `
+        <button class="tab ${isActive ? "active" : ""}"
+                data-skill="${s.id}"
+                onclick="selectSkill('${s.id}')"
+                style="${activeStyle}">
           <span class="tab-icon">${s.icon}</span>
           <span>${s.name}</span>
-          <span class="tab-dot"></span>
-        </button>
-      `,
-        ).join("");
+          <span class="tab-dot" style="${dotStyle}"></span>
+        </button>`;
+        }).join("");
       }
 
       function renderSkillCard() {
