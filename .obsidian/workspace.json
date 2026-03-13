@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SKILLS/skills-list.md",
+                "file": "SKILLS/create-tasks-skills.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "skills-list"
+              "title": "create-tasks-skills"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "4713a1527e42bd89",
   "lastOpenFiles": [
+    "SKILLS/create-new-bug-skills.md",
+    "SKILLS/skills-list.md",
     "SKILLS/skills-list.md.tmp.22760.1773316568505",
     "TEMPLATES/bug-template.md.tmp.22760.1773316553230",
     "SKILLS/create-new-bug-skills.md.tmp.22760.1773316534370",
