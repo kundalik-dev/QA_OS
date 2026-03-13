@@ -161,4 +161,52 @@ const SKILLS_CONFIG = [
       return "#update-skills-list";
     },
   },
+
+  {
+    id: "sql-creator",
+    name: "SQL Creator",
+    icon: "🗄️",
+    color: "#8b5cf6",
+    description: "Generate a SQL script .md file from a natural language description",
+    command: "/sql.create",
+    fields: [
+      {
+        id: "description",
+        label: "What should the SQL do?",
+        type: "text",
+        required: true,
+        placeholder: "e.g. find members with schemeid=6 and userstatus=active with funds having units>20",
+        span: "full",
+      },
+      {
+        id: "projectname",
+        label: "Project",
+        type: "select",
+        options: ["xps", "emember", "penscope", "abf"],
+        default: "xps",
+      },
+      {
+        id: "type",
+        label: "Script Type",
+        type: "select",
+        options: ["Query", "DML", "DDL", "Seed", "Cleanup", "Report"],
+        default: "Query",
+      },
+      {
+        id: "dbname",
+        label: "Database Name",
+        type: "text",
+        placeholder: "e.g. XPS_API_DEV",
+        hint: "Optional — written into script header",
+      },
+    ],
+    generate(vals) {
+      if (!vals.description) return "";
+      let cmd = `/sql.create "${vals.description}"`;
+      if (vals.projectname) cmd += ` projectname=${vals.projectname}`;
+      if (vals.type)        cmd += ` type=${vals.type}`;
+      if (vals.dbname)      cmd += ` dbname=${vals.dbname}`;
+      return cmd;
+    },
+  },
 ];
