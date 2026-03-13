@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "SKILLS/update-bugs-list-skill.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "update-bugs-list-skill"
             }
           }
         ]
@@ -185,6 +185,13 @@
   },
   "active": "06db344de894e69a",
   "lastOpenFiles": [
+    "SKILLS/update-skills-list.md",
+    "SKILLS/skills-list.md",
+    "SKILLS/create-tasks-skills.md",
+    "SKILLS/create-new-bug-skills.md",
+    "TODAY.md",
+    "BUGS/2026-BUGS/BUG-001-add-to-cart-button-not-clickable.md",
+    "DAILY/2026/MAR-2026/2026-03-12.md",
     "CLAUDE.md",
     "CLAUDE.md.tmp.16844.1773395105668",
     "TEMPLATES/test-suite-index.md",
@@ -202,7 +209,6 @@
     "DAILY/IDEAS",
     "TEST-CASES/TEMPLATES/test-case-template.md",
     "TEST-CASES/TEMPLATES/test-suite-index.md",
-    "SKILLS/create-new-bug-skills.md",
     "TEMPLATES/test-report-template.md",
     "TEMPLATES/standup-template.md",
     "TEMPLATES/follow-up-template.md",
@@ -210,8 +216,6 @@
     "TEMPLATES/credentials-template.md",
     "TEMPLATES/bug-template.md",
     "TEMPLATES/bug-log.md",
-    "SKILLS/create-tasks-skills.md",
-    "SKILLS/skills-list.md",
     "SKILLS/update-bugs-list-skill.md",
     "BUGS/BUGS-LIST/R3.46/bugs-list.md",
     "BUGS/BUGS-LIST/R3.45/bugs-list.md"

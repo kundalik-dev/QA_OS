@@ -73,37 +73,37 @@ QA_OS/
 
 ## ID System
 
-| Type | Format | Example | File Location |
-|------|--------|---------|---------------|
-| Bug | `BUG-###` | `BUG-042` | `BUGS/2026-BUGS/BUG-042-slug.md` |
-| Test Case | `TC-###` | `TC-017` | `MANUAL-TESTING/TEST-CASES/[PROJECT]/[type]/TC-017.md` |
-| Automation Script | `AUTO-###` | `AUTO-005` | `AUTOMATION-TESTING/SCRIPTS/[PROJECT]/` |
-| SQL Script | `SQL-###` | `SQL-023` | `SQL/SCRIPTS/[PROJECT]/[type]/SQL-023-desc.sql` |
-| Follow-up | `FU-###` | `FU-008` | `DAILY/FOLLOW-UPS/FU-008.md` |
-| Sprint | `SPRINT-##` | `SPRINT-04` | `DAILY/SCRUM/SPRINT-04/` |
-| Report | `RPT-###` | `RPT-012` | `REPORTS/[PROJECT]/RPT-012-*.md` |
-| Task | `task-[slug]-[YYYYMMDD-HHMM].md` | — | `DAILY/TODOS/` |
+| Type              | Format                           | Example     | File Location                                          |
+| ----------------- | -------------------------------- | ----------- | ------------------------------------------------------ |
+| Bug               | `BUG-###`                        | `BUG-042`   | `BUGS/2026-BUGS/BUG-042-slug.md`                       |
+| Test Case         | `TC-###`                         | `TC-017`    | `MANUAL-TESTING/TEST-CASES/[PROJECT]/[type]/TC-017.md` |
+| Automation Script | `AUTO-###`                       | `AUTO-005`  | `AUTOMATION-TESTING/SCRIPTS/[PROJECT]/`                |
+| SQL Script        | `SQL-###`                        | `SQL-023`   | `SQL/SCRIPTS/[PROJECT]/[type]/SQL-023-desc.sql`        |
+| Follow-up         | `FU-###`                         | `FU-008`    | `DAILY/FOLLOW-UPS/FU-008.md`                           |
+| Sprint            | `SPRINT-##`                      | `SPRINT-04` | `DAILY/SCRUM/SPRINT-04/`                               |
+| Report            | `RPT-###`                        | `RPT-012`   | `REPORTS/[PROJECT]/RPT-012-*.md`                       |
+| Task              | `task-[slug]-[YYYYMMDD-HHMM].md` | —           | `DAILY/TODOS/`                                         |
 
 ---
 
 ## Template Quick Reference
 
-| I need to... | Template location |
-|---|---|
-| Log a new bug | `TEMPLATES/bug-template.md` |
-| Track all sprint bugs | `TEMPLATES/bug-log.md` |
-| Write a test case | `TEMPLATES/test-case-template.md` |
-| Create a test suite index | `TEMPLATES/test-suite-index.md` |
-| Write daily standup | `TEMPLATES/standup-template.md` |
-| Write today's command center | `TEMPLATES/today-template.md` |
-| Track a follow-up | `TEMPLATES/follow-up-template.md` |
-| Map credentials | `TEMPLATES/credentials-template.md` |
-| Generate a test report | `TEMPLATES/test-report-template.md` |
-| Write a SQL script | `SQL/TEMPLATES/sql-script-template.sql` |
-| Find any SQL script | `SQL/TEMPLATES/sql-index.md` |
-| Create a task | `TEMPLATES/tasks-template.md` |
-| Weekly note | `TEMPLATES/weekly-template.md` |
-| Daily note | `TEMPLATES/daily-template.md` |
+| I need to...                 | Template location                       |
+| ---------------------------- | --------------------------------------- |
+| Log a new bug                | `TEMPLATES/bug-template.md`             |
+| Track all sprint bugs        | `TEMPLATES/bug-log.md`                  |
+| Write a test case            | `TEMPLATES/test-case-template.md`       |
+| Create a test suite index    | `TEMPLATES/test-suite-index.md`         |
+| Write daily standup          | `TEMPLATES/standup-template.md`         |
+| Write today's command center | `TEMPLATES/today-template.md`           |
+| Track a follow-up            | `TEMPLATES/follow-up-template.md`       |
+| Map credentials              | `TEMPLATES/credentials-template.md`     |
+| Generate a test report       | `TEMPLATES/test-report-template.md`     |
+| Write a SQL script           | `SQL/TEMPLATES/sql-script-template.sql` |
+| Find any SQL script          | `SQL/TEMPLATES/sql-index.md`            |
+| Create a task                | `TEMPLATES/tasks-template.md`           |
+| Weekly note                  | `TEMPLATES/weekly-template.md`          |
+| Daily note                   | `TEMPLATES/daily-template.md`           |
 
 ---
 
@@ -112,12 +112,12 @@ QA_OS/
 These are active skills. Detect the trigger in the user's message and execute the skill.
 Read the skill file for full instructions.
 
-| Trigger | Skill File | What it does |
-|---------|-----------|--------------|
-| Message starts with `NEW BUG:` | `SKILLS/create-new-bug-skills.md` | Creates a structured bug report in `BUGS/2026-BUGS/`. Auto-generates sequential BUG-ID. Optional params: `PROJECT:` `TAG:` `PRIORITY:` `SEVERITY:` `BUILD:` |
-| Message starts with `TASK:` | `SKILLS/create-tasks-skills.md` | Creates a structured task file in `DAILY/TODOS/`. Parses due date from natural language. |
-| Message is `#update-skills-list` | `SKILLS/update-skills-list.md` | Scans all skill files and updates `SKILLS/skills-list.md` |
-| Message starts with `#update-bugs-list` | `SKILLS/update-bugs-list-skill.md` | Scans `BUGS/2026-BUGS/`, filters by `BUILD:`, writes bug table to `BUGS/BUGS-LIST/<BUILD>/bugs-list.md` |
+| Trigger                                 | Skill File                         | What it does                                                                                                                                                |
+| --------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Message starts with `NEW BUG:`          | `SKILLS/create-new-bug-skills.md`  | Creates a structured bug report in `BUGS/2026-BUGS/`. Auto-generates sequential BUG-ID. Optional params: `PROJECT:` `TAG:` `PRIORITY:` `SEVERITY:` `BUILD:` |
+| Message starts with `TASK:`             | `SKILLS/create-tasks-skills.md`    | Creates a structured task file in `DAILY/TODOS/`. Parses due date from natural language.                                                                    |
+| Message is `#update-skills-list`        | `SKILLS/update-skills-list.md`     | Scans all skill files and updates `SKILLS/skills-list.md`                                                                                                   |
+| Message starts with `#update-bugs-list` | `SKILLS/update-bugs-list-skill.md` | Scans `BUGS/2026-BUGS/`, filters by `BUILD:`, writes bug table to `BUGS/BUGS-LIST/<BUILD>/bugs-list.md`                                                     |
 
 ### Skill defaults (Bug Creator)
 
@@ -130,12 +130,12 @@ Read the skill file for full instructions.
 
 ### Allowed field values
 
-| Field | Values |
-|-------|--------|
-| Severity | Critical \| High \| Medium \| Low |
-| Priority | P1 \| P2 \| P3 \| P4 |
-| Status | New \| In Progress \| Fixed \| Verified \| Closed \| Deferred \| Won't Fix |
-| Environment | Dev \| QA \| Staging \| UAT \| Prod |
+| Field       | Values                                                                     |
+| ----------- | -------------------------------------------------------------------------- |
+| Severity    | Critical \| High \| Medium \| Low                                          |
+| Priority    | P1 \| P2 \| P3 \| P4                                                       |
+| Status      | New \| In Progress \| Fixed \| Verified \| Closed \| Deferred \| Won't Fix |
+| Environment | Dev \| QA \| Staging \| UAT \| Prod                                        |
 
 ---
 
@@ -145,16 +145,16 @@ Read the skill file for full instructions.
 - Exceptions: `CLAUDE.md`, `README.md`, `CHANGELOG.md`, `TODAY.md` stay uppercase
 - Always include date in time-sensitive files
 
-| File type | Pattern | Example |
-|-----------|---------|---------|
-| Bug file | `BUG-###-short-title.md` | `BUG-015-login-button-not-working.md` |
-| Test case | `TC-###-short-title.md` | `TC-017-login-invalid-password.md` |
-| Task file | `task-[slug]-[YYYYMMDD-HHMM].md` | `task-complete-regression-20260312-1030.md` |
-| Daily note | `YYYY-MM-DD.md` | `2026-03-12.md` |
-| SQL script | `SQL-###-short-desc.sql` | `SQL-023-seed-test-users.sql` |
-| Report | `RPT-###-[type]-YYYY-MM-DD.md` | `RPT-012-sprint-report-2026-03-28.md` |
-| Follow-up | `FU-###-subject.md` | `FU-008-pending-api-docs.md` |
-| Standup | `YYYY-MM-DD.md` | `2026-03-12.md` |
+| File type  | Pattern                          | Example                                     |
+| ---------- | -------------------------------- | ------------------------------------------- |
+| Bug file   | `BUG-###-short-title.md`         | `BUG-015-login-button-not-working.md`       |
+| Test case  | `TC-###-short-title.md`          | `TC-017-login-invalid-password.md`          |
+| Task file  | `task-[slug]-[YYYYMMDD-HHMM].md` | `task-complete-regression-20260312-1030.md` |
+| Daily note | `YYYY-MM-DD.md`                  | `2026-03-12.md`                             |
+| SQL script | `SQL-###-short-desc.sql`         | `SQL-023-seed-test-users.sql`               |
+| Report     | `RPT-###-[type]-YYYY-MM-DD.md`   | `RPT-012-sprint-report-2026-03-28.md`       |
+| Follow-up  | `FU-###-subject.md`              | `FU-008-pending-api-docs.md`                |
+| Standup    | `YYYY-MM-DD.md`                  | `2026-03-12.md`                             |
 
 ---
 
@@ -223,6 +223,7 @@ Move completed/old items to `ARCHIVE/`.
 ## CLAUDE.md Maintenance
 
 After every session where AI helps with decisions:
+
 1. Update relevant project `CLAUDE.md` with new decisions
 2. Update "Known issues / gotchas" if something was discovered
 3. Update this file if OS structure or rules change
