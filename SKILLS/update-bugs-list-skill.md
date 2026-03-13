@@ -62,18 +62,19 @@ If a bug file has no `build:` field, skip it (do not include).
 
 From each matching bug's frontmatter, extract:
 
-| Field      | Frontmatter key |
-|------------|-----------------|
-| BUG ID     | bug_id          |
-| JIRA ID    | jira_id         |
-| Title      | title           |
-| Severity   | severity        |
-| Project    | project         |
-| Tag        | tags (join with comma if multiple) |
-| Priority   | priority        |
-| Status     | status          |
+| Field    | Frontmatter key                    |
+| -------- | ---------------------------------- |
+| BUG ID   | bug_id                             |
+| JIRA ID  | jira_id                            |
+| Title    | title                              |
+| Severity | severity                           |
+| Project  | project                            |
+| Tag      | tags (join with comma if multiple) |
+| Priority | priority                           |
+| Status   | status                             |
 
 Tags handling:
+
 - If tags is a YAML list → join with comma: `auth, ui`
 - If tags is empty → display `-`
 - If jira_id is blank/placeholder → display `—`
@@ -86,9 +87,9 @@ Overwrite `BUGS/BUGS-LIST/<BUILD>/bugs-list.md` with the following format:
 
 # Bugs List — <BUILD>
 
-| BUG ID | JIRA ID | Title | Severity | Project | Tag | Priority | Status |
-|--------|---------|-------|----------|---------|-----|----------|--------|
-| BUG-001 | — | Title here | High | PenScope | ui | P2 | New |
+| BUG ID  | JIRA ID | Title      | Severity | Project  | Tag | Priority | Status |
+| ------- | ------- | ---------- | -------- | -------- | --- | -------- | ------ |
+| BUG-001 | —       | Title here | High     | PenScope | ui  | P2       | New    |
 
 ---
 
@@ -107,12 +108,15 @@ Rows must be sorted by BUG ID ascending (BUG-001 → BUG-002 → ...).
 Only use the following allowed values. If a bug file has an invalid value, include it as-is but flag it in the response.
 
 ## Severity
+
 Critical | High | Medium | Low
 
 ## Priority
+
 P1 | P2 | P3 | P4
 
 ## Status
+
 New | In Progress | Fixed | Verified | Closed | Deferred | Won't Fix
 
 ---
@@ -161,10 +165,10 @@ Output file: BUGS/BUGS-LIST/R3.46/bugs-list.md
 ```markdown
 # Bugs List — R3.46
 
-| BUG ID  | JIRA ID | Title                           | Severity | Project  | Tag      | Priority | Status |
-|---------|---------|---------------------------------|----------|----------|----------|----------|--------|
-| BUG-002 | —       | Login timeout on mobile         | High     | eMember  | auth, ui | P1       | New    |
-| BUG-003 | JRA-890 | Profile picture upload fails    | Medium   | PenScope | upload   | P3       | Fixed  |
+| BUG ID  | JIRA ID | Title                        | Severity | Project  | Tag      | Priority | Status |
+| ------- | ------- | ---------------------------- | -------- | -------- | -------- | -------- | ------ |
+| BUG-002 | —       | Login timeout on mobile      | High     | eMember  | auth, ui | P1       | New    |
+| BUG-003 | JRA-890 | Profile picture upload fails | Medium   | PenScope | upload   | P3       | Fixed  |
 
 ---
 
