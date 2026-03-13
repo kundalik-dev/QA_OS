@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "39433d35a6f3dcf2",
+        "id": "c0a9e1122a5e5a90",
         "type": "tabs",
         "children": [
           {
-            "id": "4713a1527e42bd89",
+            "id": "06db344de894e69a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SKILLS/create-tasks-skills.md",
+                "file": "CLAUDE.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "create-tasks-skills"
+              "title": "CLAUDE"
             }
           }
         ]
@@ -183,21 +183,37 @@
       "bases:Create new base": false
     }
   },
-  "active": "4713a1527e42bd89",
+  "active": "06db344de894e69a",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "CLAUDE.md.tmp.16844.1773395105668",
+    "TEMPLATES/test-suite-index.md",
+    "TEMPLATES/test-case-template.md",
+    "DAILY/2026/WEEKLY-REPORT",
+    "DAILY/2026/WEEKLY",
+    "DAILY/TODOS/task-setup-life-os-20260312-0000.md",
+    "DAILY/TODOS",
+    "DAILY/SCRUM/2026/MAR-2026/12-02-2026.md",
+    "DAILY/SCRUM/2026/MAR-2026",
+    "DAILY/SCRUM/2026/FEB-2026",
+    "DAILY/SCRUM/WEEKLY",
+    "DAILY/SCRUM/2026",
+    "DAILY/SCRUM",
+    "DAILY/IDEAS",
+    "TEST-CASES/TEMPLATES/test-case-template.md",
+    "TEST-CASES/TEMPLATES/test-suite-index.md",
     "SKILLS/create-new-bug-skills.md",
+    "TEMPLATES/test-report-template.md",
+    "TEMPLATES/standup-template.md",
+    "TEMPLATES/follow-up-template.md",
+    "TEMPLATES/daily-template.md",
+    "TEMPLATES/credentials-template.md",
+    "TEMPLATES/bug-template.md",
+    "TEMPLATES/bug-log.md",
+    "SKILLS/create-tasks-skills.md",
     "SKILLS/skills-list.md",
-    "SKILLS/skills-list.md.tmp.22760.1773316568505",
-    "TEMPLATES/bug-template.md.tmp.22760.1773316553230",
-    "SKILLS/create-new-bug-skills.md.tmp.22760.1773316534370",
-    "SKILLS/create-new-bug-skills.md.tmp.22760.1773316526638",
-    "SKILLS/create-new-bug-skills.md.tmp.22760.1773316515878",
-    "SKILLS/create-new-bug-skills.md.tmp.22760.1773316511815",
     "SKILLS/update-bugs-list-skill.md",
-    "SKILLS/update-bugs-list-skill.md.tmp.22760.1773316502092",
     "BUGS/BUGS-LIST/R3.46/bugs-list.md",
-    "BUGS/BUGS-LIST/R3.46",
-    "BUGS/BUGS-LIST/R3.45/bugs-list.md",
-    "BUGS/BUGS-LIST/R3.45"
+    "BUGS/BUGS-LIST/R3.45/bugs-list.md"
   ]
 }

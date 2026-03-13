@@ -144,8 +144,3 @@ tags: [saas, coding, review]
 - **Day Score:** /10
 
 <!-- GENERATED: YYYY-MM-DD HH:MM | Sources: DAILY/YYYY/YYYY-MM/YYYY-MM-DD.md, DAILY/GOALS/YYYY-Q0-goals.md, PROJECTS/active/ -->
-
-git remote add origin ssh://git@github-work/kundalik-dev/QA_OS.git
-
-git config user.name "kundalik-dev"
-git config user.email "kundalik.dev@gmail.com"
