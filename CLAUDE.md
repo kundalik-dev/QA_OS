@@ -112,12 +112,12 @@ QA_OS/
 These are active skills. Detect the trigger in the user's message and execute the skill.
 Read the skill file for full instructions.
 
-| Trigger                                 | Skill File                         | What it does                                                                                                                                                |
-| --------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Message starts with `NEW BUG:`          | `SKILLS/create-new-bug-skills.md`  | Creates a structured bug report in `BUGS/2026-BUGS/`. Auto-generates sequential BUG-ID. Optional params: `PROJECT:` `TAG:` `PRIORITY:` `SEVERITY:` `BUILD:` |
-| Message starts with `TASK:`             | `SKILLS/create-tasks-skills.md`    | Creates a structured task file in `DAILY/TODOS/`. Parses due date from natural language.                                                                    |
-| Message is `#update-skills-list`        | `SKILLS/update-skills-list.md`     | Scans all skill files and updates `SKILLS/skills-list.md`                                                                                                   |
-| Message starts with `#update-bugs-list` | `SKILLS/update-bugs-list-skill.md` | Scans `BUGS/2026-BUGS/`, filters by `BUILD:`, writes bug table to `BUGS/BUGS-LIST/<BUILD>/bugs-list.md`                                                     |
+| Trigger                                 | Skill File                                    | What it does                                                                                                                                                        |
+| --------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Message starts with `/bug.create`       | `claude/skills/bug-creator/SKILL.md`          | Creates a structured bug report in `BUGS/2026-BUGS/`. Auto-generates sequential BUG-ID. Optional params: `project=` `tags=` `priority=` `severity=` `build=`        |
+| Message starts with `TASK:`             | `SKILLS/create-tasks-skills.md`               | Creates a structured task file in `DAILY/TODOS/`. Parses due date from natural language.                                                                            |
+| Message is `#update-skills-list`        | `SKILLS/update-skills-list.md`                | Scans all skill files and updates `SKILLS/skills-list.md`                                                                                                           |
+| Message starts with `#update-bugs-list` | `SKILLS/update-bugs-list-skill.md`            | Scans `BUGS/2026-BUGS/`, filters by `BUILD:`, writes bug table to `BUGS/BUGS-LIST/<BUILD>/bugs-list.md`                                                             |
 
 ### Skill defaults (Bug Creator)
 
