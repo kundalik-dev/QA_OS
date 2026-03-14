@@ -1,6 +1,6 @@
 ---
 name: sql-creator
-description: Generates a SQL script markdown file from a natural language description. Always trigger when the user message starts with "/sql.create". Reads database schema from SQL/DATABASE/<projectname>/ (prefers SQLite .db file, falls back to CSV). Auto-generates next sequential SQL-### ID, writes a structured .md file to SQL/SCRIPTS/<projectname>/. Required params- description (quoted), projectname=. Optional- dbname=, type=.
+description: Generates a SQL script markdown file from a natural language description. Always trigger when the user message starts with "/sql.create". Reads database schema from SQL/DATABASE/<projectname>/ (prefers SQLite.db file, falls back to CSV). Auto-generates next sequential SQL-### ID, writes a structured .md file to SQL/SCRIPTS/<projectname>/. Required params:- description (quoted), projectname=. Optional:- dbname=, type=.
 ---
 
 # SQL Script Creator
@@ -35,7 +35,7 @@ Message starts with:
 | --------------------------- | ---------------------------- | ---------------------------- |
 | Description (quoted string) | Natural language SQL request | — (required)                 |
 | `projectname=`              | Folder lookup key            | — (required, ask if missing) |
-| `dbname=`                   | Written into script header   | _(blank)_                    |
+| `dbname=`                   | Written into script header   | — (required, ask if missing) |
 | `type=`                     | Script type                  | Auto-detect from description |
 
 **Type auto-detection:**
@@ -61,16 +61,17 @@ Scan that folder in this priority order:
 
 If a `.db` or `.sqlite` file exists:
 
-1. Use the Bash tool to run: `sqlite3 <file> ".tables"` to list all tables
+1. Use the Bash tool to run: `sqlite3 <file>".tables"` to list all tables e
 2. For each relevant table (based on the description keywords), run: `sqlite3 <file> "PRAGMA table_info(<table>);"` to get column names and types
 3. Use this schema to write correct SQL with real column names
 
 ### Priority 2 — CSV files
 
-If `.csv` files exist (one file per table, filename = table name):
+If `.csv` files exist (one file per databasename, filename = database name):
 
-1. Read each relevant CSV file (header row = column names)
-2. Use column names in the generated SQL
+1. Read each relevant CSV file (col1 = id, col2 = tableName, col=3 column name)
+2. Use table name & column names to generated SQL
+3. Create sql query by analysing user input vs actual tables and columns names
 
 ### Priority 3 — Schema markdown files
 
@@ -88,9 +89,10 @@ If the folder is empty or missing:
 
 ## Step 3 — Generate SQL Script ID
 
-1. Scan all `.md` files in `SQL/SCRIPTS/<projectname>/`
-2. Find the highest `SQL-###` number in filenames
-3. Increment by 1 → new ID
+1. Check current file counter form `LOGS/file-id-counter.json` with key as `SQL`
+2. Then Increment by 1 → new ID
+3. Then use that ID to generate new id like this `SQL-###` number in filenames
+4. Update the current id value to new one `LOGS/file-id-counter.json` with key as `SQL`
 
 If folder is empty or doesn't exist → start at `SQL-001`. Create the folder if it doesn't exist.
 
@@ -245,7 +247,7 @@ If `SQL/DATABASE/<projectname>/` doesn't exist, create it and note:
 ## Rules
 
 1. Never write destructive SQL (`DROP TABLE`, `TRUNCATE`, bulk `DELETE` without `WHERE`) without a clear warning comment.
-2. Always scan the scripts folder before assigning an ID — never guess.
+2. Always scan the `LOGS/file-id-counter.json` file before assigning an ID — never guess.
 3. Do not ask clarifying questions — generate the best SQL from available schema and description.
 4. If schema is missing, generate with placeholder names but flag clearly in the file.
 5. Create `SQL/SCRIPTS/<projectname>/` if it doesn't exist.
